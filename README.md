@@ -1,5 +1,8 @@
 # This is a repo for cricket-data visualization as well as data analysis.
 
+
+## Early thought
+
 1. Obtain the data
     a) A quick google search gave me access to all the t20 male cricket scorecard from this website.
         https://cricsheet.org/downloads/
