@@ -1,0 +1,128 @@
+version,1.3.0
+info,team,Malaysia
+info,team,Nepal
+info,gender,male
+info,season,2019
+info,date,2019/07/24
+info,competition,ICC Men's T20 World Cup Asia Region Final
+info,match_number,5
+info,venue,Indian Association Ground
+info,city,Singapore
+info,toss_winner,Nepal
+info,toss_decision,field
+info,player_of_match,G Malla
+info,umpire,V Kalidas
+info,umpire,Tabarak Dar
+info,reserve_umpire,BB Pradhan
+info,match_referee,M Nayyar
+info,winner,Nepal
+info,winner_wickets,7
+ball,1,0.1,Malaysia,Anwar Arudin,Shafiq Sharif,Sompal Kami,0,0,caught,Anwar Arudin
+ball,1,0.2,Malaysia,Syed Aziz,Shafiq Sharif,Sompal Kami,4,0,"",""
+ball,1,0.3,Malaysia,Syed Aziz,Shafiq Sharif,Sompal Kami,4,0,"",""
+ball,1,0.4,Malaysia,Syed Aziz,Shafiq Sharif,Sompal Kami,0,0,"",""
+ball,1,0.5,Malaysia,Syed Aziz,Shafiq Sharif,Sompal Kami,0,1,"",""
+ball,1,0.6,Malaysia,Shafiq Sharif,Syed Aziz,Sompal Kami,0,0,lbw,Shafiq Sharif
+ball,1,1.1,Malaysia,Syed Aziz,Aminuddin Ramly,S Lamichhane,0,0,"",""
+ball,1,1.2,Malaysia,Syed Aziz,Aminuddin Ramly,S Lamichhane,1,0,"",""
+ball,1,1.3,Malaysia,Aminuddin Ramly,Syed Aziz,S Lamichhane,1,0,"",""
+ball,1,1.4,Malaysia,Syed Aziz,Aminuddin Ramly,S Lamichhane,0,1,"",""
+ball,1,1.5,Malaysia,Aminuddin Ramly,Syed Aziz,S Lamichhane,0,0,"",""
+ball,1,1.6,Malaysia,Aminuddin Ramly,Syed Aziz,S Lamichhane,4,0,"",""
+ball,1,2.1,Malaysia,Syed Aziz,Aminuddin Ramly,Sompal Kami,4,0,"",""
+ball,1,2.2,Malaysia,Syed Aziz,Aminuddin Ramly,Sompal Kami,4,0,"",""
+ball,1,2.3,Malaysia,Syed Aziz,Aminuddin Ramly,Sompal Kami,4,0,"",""
+ball,1,2.4,Malaysia,Syed Aziz,Aminuddin Ramly,Sompal Kami,2,0,"",""
+ball,1,2.5,Malaysia,Syed Aziz,Aminuddin Ramly,Sompal Kami,1,0,"",""
+ball,1,2.6,Malaysia,Aminuddin Ramly,Syed Aziz,Sompal Kami,0,0,bowled,Aminuddin Ramly
+ball,1,3.1,Malaysia,Syed Aziz,M Syahadat Ramli,S Lamichhane,6,0,"",""
+ball,1,3.2,Malaysia,Syed Aziz,M Syahadat Ramli,S Lamichhane,0,0,"",""
+ball,1,3.3,Malaysia,Syed Aziz,M Syahadat Ramli,S Lamichhane,0,0,caught,Syed Aziz
+ball,1,3.4,Malaysia,M Syahadat Ramli,Virandeep Singh,S Lamichhane,1,0,"",""
+ball,1,3.5,Malaysia,Virandeep Singh,M Syahadat Ramli,S Lamichhane,0,1,"",""
+ball,1,3.6,Malaysia,Virandeep Singh,M Syahadat Ramli,S Lamichhane,0,0,"",""
+ball,1,3.7,Malaysia,Virandeep Singh,M Syahadat Ramli,S Lamichhane,3,0,"",""
+ball,1,4.1,Malaysia,Virandeep Singh,M Syahadat Ramli,Karan KC,0,0,"",""
+ball,1,4.2,Malaysia,Virandeep Singh,M Syahadat Ramli,Karan KC,0,0,"",""
+ball,1,4.3,Malaysia,Virandeep Singh,M Syahadat Ramli,Karan KC,2,0,"",""
+ball,1,4.4,Malaysia,Virandeep Singh,M Syahadat Ramli,Karan KC,0,1,"",""
+ball,1,4.5,Malaysia,Virandeep Singh,M Syahadat Ramli,Karan KC,1,0,"",""
+ball,1,4.6,Malaysia,M Syahadat Ramli,Virandeep Singh,Karan KC,0,0,caught,M Syahadat Ramli
+ball,1,4.7,Malaysia,Ahmed Faiz Mohammad Noor,Virandeep Singh,Karan KC,1,0,"",""
+ball,1,5.1,Malaysia,Ahmed Faiz Mohammad Noor,Virandeep Singh,A Bohara,1,0,"",""
+ball,1,5.2,Malaysia,Virandeep Singh,Ahmed Faiz Mohammad Noor,A Bohara,1,0,"",""
+ball,1,5.3,Malaysia,Ahmed Faiz Mohammad Noor,Virandeep Singh,A Bohara,4,0,"",""
+ball,1,5.4,Malaysia,Ahmed Faiz Mohammad Noor,Virandeep Singh,A Bohara,0,0,"",""
+ball,1,5.5,Malaysia,Ahmed Faiz Mohammad Noor,Virandeep Singh,A Bohara,1,0,"",""
+ball,1,5.6,Malaysia,Virandeep Singh,Ahmed Faiz Mohammad Noor,A Bohara,1,0,"",""
+ball,1,6.1,Malaysia,Virandeep Singh,Ahmed Faiz Mohammad Noor,Karan KC,4,0,"",""
+ball,1,6.2,Malaysia,Virandeep Singh,Ahmed Faiz Mohammad Noor,Karan KC,1,0,"",""
+ball,1,6.3,Malaysia,Ahmed Faiz Mohammad Noor,Virandeep Singh,Karan KC,0,0,"",""
+ball,1,6.4,Malaysia,Ahmed Faiz Mohammad Noor,Virandeep Singh,Karan KC,1,0,"",""
+ball,1,6.5,Malaysia,Virandeep Singh,Ahmed Faiz Mohammad Noor,Karan KC,0,0,"",""
+ball,1,6.6,Malaysia,Virandeep Singh,Ahmed Faiz Mohammad Noor,Karan KC,1,0,"",""
+ball,1,7.1,Malaysia,Virandeep Singh,Ahmed Faiz Mohammad Noor,B Regmi,1,0,"",""
+ball,1,7.2,Malaysia,Ahmed Faiz Mohammad Noor,Virandeep Singh,B Regmi,1,0,"",""
+ball,1,7.3,Malaysia,Virandeep Singh,Ahmed Faiz Mohammad Noor,B Regmi,6,0,"",""
+ball,1,7.4,Malaysia,Virandeep Singh,Ahmed Faiz Mohammad Noor,B Regmi,0,0,"",""
+ball,1,7.5,Malaysia,Virandeep Singh,Ahmed Faiz Mohammad Noor,B Regmi,0,0,caught,Virandeep Singh
+ball,1,7.6,Malaysia,Ahmed Faiz Mohammad Noor,S Muniandy,B Regmi,0,1,"",""
+ball,1,7.7,Malaysia,Ahmed Faiz Mohammad Noor,S Muniandy,B Regmi,0,0,caught,Ahmed Faiz Mohammad Noor
+ball,1,8.1,Malaysia,S Muniandy,Fitri Sham,A Bohara,1,0,"",""
+ball,1,8.2,Malaysia,Fitri Sham,S Muniandy,A Bohara,3,0,"",""
+ball,1,8.3,Malaysia,S Muniandy,Fitri Sham,A Bohara,1,0,"",""
+ball,1,8.4,Malaysia,Fitri Sham,S Muniandy,A Bohara,0,1,"",""
+ball,1,8.5,Malaysia,S Muniandy,Fitri Sham,A Bohara,4,0,"",""
+ball,1,8.6,Malaysia,S Muniandy,Fitri Sham,A Bohara,2,0,"",""
+ball,2,0.1,Nepal,PS Airee,G Malla,Syed Aziz,0,1,"",""
+ball,2,0.2,Nepal,PS Airee,G Malla,Syed Aziz,1,0,"",""
+ball,2,0.3,Nepal,G Malla,PS Airee,Syed Aziz,1,0,"",""
+ball,2,0.4,Nepal,PS Airee,G Malla,Syed Aziz,4,0,"",""
+ball,2,0.5,Nepal,PS Airee,G Malla,Syed Aziz,0,0,"",""
+ball,2,0.6,Nepal,PS Airee,G Malla,Syed Aziz,0,1,"",""
+ball,2,0.7,Nepal,PS Airee,G Malla,Syed Aziz,0,1,"",""
+ball,2,0.8,Nepal,PS Airee,G Malla,Syed Aziz,1,0,"",""
+ball,2,0.9,Nepal,G Malla,PS Airee,Syed Aziz,1,0,"",""
+ball,2,1.1,Nepal,G Malla,PS Airee,Fitri Sham,4,0,"",""
+ball,2,1.2,Nepal,G Malla,PS Airee,Fitri Sham,4,0,"",""
+ball,2,1.3,Nepal,G Malla,PS Airee,Fitri Sham,0,0,"",""
+ball,2,1.4,Nepal,G Malla,PS Airee,Fitri Sham,1,0,"",""
+ball,2,1.5,Nepal,PS Airee,G Malla,Fitri Sham,0,0,"",""
+ball,2,1.6,Nepal,PS Airee,G Malla,Fitri Sham,0,0,"",""
+ball,2,2.1,Nepal,G Malla,PS Airee,S Muniandy,6,0,"",""
+ball,2,2.2,Nepal,G Malla,PS Airee,S Muniandy,1,0,"",""
+ball,2,2.3,Nepal,PS Airee,G Malla,S Muniandy,1,0,"",""
+ball,2,2.4,Nepal,G Malla,PS Airee,S Muniandy,0,1,"",""
+ball,2,2.5,Nepal,G Malla,PS Airee,S Muniandy,4,0,"",""
+ball,2,2.6,Nepal,G Malla,PS Airee,S Muniandy,4,0,"",""
+ball,2,2.7,Nepal,G Malla,PS Airee,S Muniandy,4,0,"",""
+ball,2,3.1,Nepal,PS Airee,G Malla,Pavandeep Singh,1,0,"",""
+ball,2,3.2,Nepal,G Malla,PS Airee,Pavandeep Singh,6,0,"",""
+ball,2,3.3,Nepal,G Malla,PS Airee,Pavandeep Singh,2,0,"",""
+ball,2,3.4,Nepal,G Malla,PS Airee,Pavandeep Singh,1,0,"",""
+ball,2,3.5,Nepal,PS Airee,G Malla,Pavandeep Singh,1,0,"",""
+ball,2,3.6,Nepal,G Malla,PS Airee,Pavandeep Singh,1,0,"",""
+ball,2,4.1,Nepal,G Malla,PS Airee,Anwar Rahman,1,0,"",""
+ball,2,4.2,Nepal,PS Airee,G Malla,Anwar Rahman,1,0,"",""
+ball,2,4.3,Nepal,G Malla,PS Airee,Anwar Rahman,2,0,"",""
+ball,2,4.4,Nepal,G Malla,PS Airee,Anwar Rahman,1,0,"",""
+ball,2,4.5,Nepal,PS Airee,G Malla,Anwar Rahman,1,0,"",""
+ball,2,4.6,Nepal,G Malla,PS Airee,Anwar Rahman,1,0,"",""
+ball,2,5.1,Nepal,G Malla,PS Airee,M Syahadat Ramli,6,0,"",""
+ball,2,5.2,Nepal,G Malla,PS Airee,M Syahadat Ramli,0,0,caught,G Malla
+ball,2,5.3,Nepal,PS Airee,B Bhandari,M Syahadat Ramli,1,0,"",""
+ball,2,5.4,Nepal,B Bhandari,PS Airee,M Syahadat Ramli,1,0,"",""
+ball,2,5.5,Nepal,PS Airee,B Bhandari,M Syahadat Ramli,0,0,caught,PS Airee
+ball,2,5.6,Nepal,B Bhandari,DS Airee,M Syahadat Ramli,1,0,"",""
+ball,2,6.1,Nepal,B Bhandari,DS Airee,Anwar Rahman,0,0,"",""
+ball,2,6.2,Nepal,B Bhandari,DS Airee,Anwar Rahman,1,0,"",""
+ball,2,6.3,Nepal,DS Airee,B Bhandari,Anwar Rahman,1,0,"",""
+ball,2,6.4,Nepal,B Bhandari,DS Airee,Anwar Rahman,2,0,"",""
+ball,2,6.5,Nepal,B Bhandari,DS Airee,Anwar Rahman,1,0,"",""
+ball,2,6.6,Nepal,DS Airee,B Bhandari,Anwar Rahman,1,0,"",""
+ball,2,7.1,Nepal,DS Airee,B Bhandari,M Syahadat Ramli,0,1,"",""
+ball,2,7.2,Nepal,B Bhandari,DS Airee,M Syahadat Ramli,1,0,"",""
+ball,2,7.3,Nepal,DS Airee,B Bhandari,M Syahadat Ramli,0,0,caught,DS Airee
+ball,2,7.4,Nepal,S Vesawkar,B Bhandari,M Syahadat Ramli,2,0,"",""
+ball,2,7.5,Nepal,S Vesawkar,B Bhandari,M Syahadat Ramli,1,0,"",""
+ball,2,7.6,Nepal,B Bhandari,S Vesawkar,M Syahadat Ramli,6,0,"",""
