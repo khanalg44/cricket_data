@@ -9,5 +9,6 @@ This is a repo for cricket-data visualization as well as data analysis.
   - For later: Use Economy in 1st 6 overs, 6-10 ov, 10-15 ov, 15-20 ov.
 
 ## Resources
-* Read this paper https://www.sciencedirect.com/science/article/pii/S2210832717301485
-* [A git repo for espn ball-by-ball commentary](https://github.com/ahmedbatty/ESPNCricInfo-BallByBall)
+- Read this paper https://www.sciencedirect.com/science/article/pii/S2210832717301485
+- [A git repo for espn ball-by-ball commentary](https://github.com/ahmedbatty/ESPNCricInfo-BallByBall)
+- [git repo for Sports-Commentary-Summarization](https://github.com/theanirudhvyas/Sports-Commentary-Summarization)
