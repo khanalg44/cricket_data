@@ -14,4 +14,4 @@ This is a repo for cricket-data visualization as well as data analysis.
 - [git repo for Sports-Commentary-Summarization](https://github.com/theanirudhvyas/Sports-Commentary-Summarization)
 
 ## Data scrapping for ball-by-ball commentary
-- Use html5lib, beautifulsoup
+- Use beautifulsoup
