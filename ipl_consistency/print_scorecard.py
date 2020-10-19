@@ -61,12 +61,16 @@ def print_scorecard(f, data_dir='./'):
     df.style.set_caption("Title")
     
     
+    print ()
+    print ("------------------------------- Match Info-------------------------------")
     print (data['info']['teams'][0] ,' vs ', data['info']['teams'][1], ', ', data['info']['dates'][0].strftime('%Y-%m-%d'))
     print ( 'Toss \t\t\t', data['info']['toss']['winner'], 'Decided to', data['info']['toss']['decision'])
     print ('Result \t\t\t', data['info']['outcome']['winner'], 'won by ', 
            list(data['info']['outcome']['by'].values())[0], list(data['info']['outcome']['by'].keys())[0])
     print ('Player of the Match\t', data['info']['player_of_match'][0])
-
+    print ()
+    print ("------------------------------- BATTING SCORECARD -------------------------------")
+    print ()
     print ()
     print (df)
 
