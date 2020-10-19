@@ -10,8 +10,11 @@ Use the code as following.
 python3  print_scorecard.py <filename>
 ```
 
-and make sure the file exists in the given path.
+and make sure the file exists in the given path. File can be downloaded from (https://cricsheet.org/downloads/)
 
-### Code Dependencies:
+## Code Dependencies
 This code uses, `numpy`, `pandas`, and `yaml`. Which can be installed in your system using standard methods like `pip`.
+
+## Declaration
+Feel free to download and use/modify this code as your requirements. And let me know if you have some suggestions for me.
 
