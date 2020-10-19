@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import os, sys, yaml
 
-data_dir='../datasets/ipl/ipl/'
+data_dir='../datasets/ipl/yaml/'
 
 def print_scorecard(f, data_dir='./'):
     
