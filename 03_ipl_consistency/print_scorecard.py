@@ -9,14 +9,21 @@ data_dir='../datasets/ipl/yaml/'
 def print_scorecard(f, data_dir='./'):
     
     fil=os.path.join(data_dir,  f )
-    data=yaml.load(open(fil))
+    #data=yaml.load(open(fil))
+
+    with open(fil, 'r') as stream:
+        try:
+            data = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+
 
     batting_card = {}    
     for inn in range(2):
         inn_name = list(data['innings'][inn].keys())[0]
 
         batting_card_inn={}
-        batting_card_inn[inn_name] = {'0':' ', '1':' ', '2':' ', '3':' ', '4':' ', '6':' ', 'R':' ', 'B':' '}
+        batting_card_inn[inn_name] = {'0':' ', '1':' ', '2':' ', '3':' ', '4':' ', '5':' ', '6':' ', 'R':' ', 'B':' '}
         
         runs_bowler={}
         runs_extra = 0
@@ -34,7 +41,7 @@ def print_scorecard(f, data_dir='./'):
             runs_tot = deliv[1]['runs'].get('total',   0)
             
             if batsman not in batting_card_inn:
-                batting_card_inn[batsman] = {'0':0, '1':0, '2':0, '3':0, '4':0, '6':0, 'R':0, 'B':0}
+                batting_card_inn[batsman] = {'0':0, '1':0, '2':0, '3':0, '4':0,  '5':0, '6':0, 'R':0, 'B':0}
 
             batting_card_inn[batsman][str(runs_bat)] = batting_card_inn[batsman][str(runs_bat)]+1
             batting_card_inn[batsman]['R'] += runs_bat
@@ -50,10 +57,10 @@ def print_scorecard(f, data_dir='./'):
             if deliv[1].get('wicket', None):
                 wkts += 1
 
-        batting_card_inn['Total_inn'+str(inn+1)] = {'0':' ', '1':' ', '2':' ', '3':' ', '4':' ', '6':' ',
+        batting_card_inn['Total_inn'+str(inn+1)] = {'0':' ', '1':' ', '2':' ', '3':' ', '4':' ', '5':' ', '6':' ',
                                                     'R':str(runs_total)+'-'+str(wkts), 'B':' '}
         # empty row
-        batting_card_inn['  '] = {'0':' ', '1':' ', '2':' ', '3':' ', '4':' ', '6':' ', 'R':' ', 'B':' '}        
+        batting_card_inn['  '] = {'0':' ', '1':' ', '2':' ', '3':' ', '4':' ', '5':' ', '6':' ', 'R':' ', 'B':' '}        
         batting_card.update(batting_card_inn)        
 
     
@@ -80,6 +87,7 @@ def print_scorecard(f, data_dir='./'):
 if __name__=='__main__':
 
     f = '335982.yaml'
+    f = '335989.yaml'
     if len(sys.argv)>1:
         f=sys.argv[1]
 
