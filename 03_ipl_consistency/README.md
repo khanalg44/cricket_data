@@ -12,9 +12,12 @@ python3  print_scorecard.py <filename>
 
 And make sure the file exists in the given path. The match files can be downloaded from (https://cricsheet.org/downloads/).
 
+For the consistency check, one can use [cricinfo website](https://stats.espncricinfo.com/talk/engine/records/index.html?id=117;type=trophy).
+
 ## Code Dependencies
 This code uses, `numpy`, `pandas`, and `yaml`. Which can be installed in your system using standard methods like `pip`.
 
 ## Declaration
 Feel free to download and use/modify this code as your requirements. And let me know if you have some suggestions for me.
+
 

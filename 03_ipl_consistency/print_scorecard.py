@@ -95,7 +95,6 @@ def print_scorecard(f, data_dir='./'):
     print ()
     print ("------------------------------- BATTING SCORECARD -------------------------------")
     print ()
-    print ()
     print (df)
 
     return df
