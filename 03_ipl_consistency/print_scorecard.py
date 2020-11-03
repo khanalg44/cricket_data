@@ -34,7 +34,6 @@ def read_match_info(fil):
     print ('Player of the Match\t', data['info']['player_of_match'][0])
     print ('---------------------------------------------------------------')
 
-
 def print_scorecard(f, data_dir='./'):
     fil=os.path.join(data_dir, f )
     
@@ -43,7 +42,6 @@ def print_scorecard(f, data_dir='./'):
             data = yaml.safe_load(stream)
         except yaml.YAMLError as exc:
             print(exc)
-    
     try:
         match_date=data['info']['dates'][0].strftime('%Y-%m-%d')
     except:
@@ -54,13 +52,29 @@ def print_scorecard(f, data_dir='./'):
     winner = data['info']['outcome'].get('winner', None)
     toss_winner = data['info']['toss'].get('winner', None)
     
+    def convert_to_ov(balls):
+        ov, balls_ = (balls//6, balls%6)
+        if balls_==0:
+            return str(ov)
+        else:
+            return str(ov)+'.'+str(balls_)
+
     
-    def add_player(player, scorecard, season=season, Team=' ', Against=' '):
-        if player not in scorecard:
-            scorecard[player] = {'0':0, '1':0, '2':0, '3':0, '4':0, '5':0, '6':0,
-                                 'Runs':0, 'BF':0, 'NO':True, 'Team':Team, 'Against':Against,
-                                 'Win':False, 'Toss':False, 'team-total':0, 'season':season}
+    def add_batsman(player, batting_scorecard, season=season, Team=' ', Against=' '):
+        if player not in batting_scorecard:
+            batting_scorecard[player] = {'0s':0, '1s':0, '2s':0, '3s':0, '4s':0, '5s':0, '6s':0,
+                                         'Runs':0, 'BF':0, 'NO':True, 'Team':Team, 'Against':Against,
+                                         'Win':False, 'Toss':False, 'team-total':0, 'season':season}
+            
+    def add_bowler(player,   bowling_scorecard, season=season, Team=' ', Against=' '):
+        if player not in bowling_scorecard:
+            bowling_scorecard[player] = {'O':0, 'M':0, 'R':0, 'W':0,
+                                         '0s':0, '1s':0, '2s':0, '3s':0, '4s':0, '5s':0, '6s':0,
+                                         'WD':0, 'NB':0, 'Team':Team, 'Against':Against, 'Win':False,
+                                         'Toss':False, 'team-total':0, 'season':season}
+
     batting_card = {}
+    bowling_card = {}
     
     for i, inn in enumerate(data['innings']):
         inn_name     = list(inn.keys())[0]
@@ -69,7 +83,8 @@ def print_scorecard(f, data_dir='./'):
         bowling_team = [team for team in  teams if team!=batting_team][0]
 
         batting_card_inn={}
-        runs_bowler={}
+        bowling_card_inn={}
+        
         runs_extra = 0
         runs_total = 0
         wkts       = 0
@@ -84,20 +99,35 @@ def print_scorecard(f, data_dir='./'):
             runs_ext = deliv[1]['runs'].get('extras',  0)
             runs_tot = deliv[1]['runs'].get('total',   0)
             
-            add_player(batsman, batting_card_inn)
+            add_batsman(batsman, batting_card_inn)
+            add_bowler(bowler , bowling_card_inn)
 
             # counter for each runs (1, 2, 3, 4, 5, 6)
-            batting_card_inn[batsman][str(runs_bat)] += 1
+            batting_card_inn[batsman][str(runs_bat)+'s'] += 1
+            bowling_card_inn[bowler ][str(runs_bat)+'s'] += 1
             
             # counter for total batsman run
             batting_card_inn[batsman]['Runs']        += runs_bat
-            
-            # counter for toal balls faced [ball will be removed later if it's a wide]
             batting_card_inn[batsman]['BF']          += 1
             
+            bowling_card_inn[bowler ]['O']           += 1
+            bowling_card_inn[bowler ]['R']           += runs_tot
+
             if 'extras' in deliv[1]:
                 if 'wides' in deliv[1]['extras']:
-                    batting_card_inn[batsman]['BF']  -= 1 # remove the ball from batsman's account
+                    batting_card_inn[batsman]['BF'] -= 1 # remove the ball from batsman's account
+                    bowling_card_inn[bowler]['O']   -= 1 # to count the extra ball
+                    bowling_card_inn[bowler]['WD']  += 1 #
+                    
+                elif 'noballs' in deliv[1]['extras']:
+                    bowling_card_inn[bowler]['O']   -= 1 # to count the extra ball
+                    bowling_card_inn[bowler]['NB']  += 1 #
+                
+                elif 'legbyes' in deliv[1]['extras']:
+                    bowling_card_inn[bowler]['R']   -= 1 #
+
+                elif 'byes' in deliv[1]['extras']:
+                    bowling_card_inn[bowler]['R']   -= deliv[1]['extras']['byes']
 
             runs_extra += runs_ext
             runs_total += runs_tot
@@ -107,49 +137,68 @@ def print_scorecard(f, data_dir='./'):
                 player_out = deliv[1]['wicket']['player_out']
                 
                 # for case when player is runout without facing a ball
-                add_player(player_out, batting_card_inn, Team=batting_team, Against=bowling_team)
-                batting_card_inn[player_out]['NO']=False
+                add_batsman(player_out, batting_card_inn, Team=batting_team, Against=bowling_team)
+                batting_card_inn[player_out]['NO'] = False
                 
-            batting_card_inn[batsman]['Team']     = batting_team
-            batting_card_inn[batsman]['Against']  = bowling_team
+                # add wicket to bowler only if it's not RUN OUT
+                if deliv[1]['wicket']['kind'] != 'run out':
+                    bowling_card_inn[bowler ]['W']           += 1
+
+            batting_card_inn[batsman]['Team']    = batting_team
+            batting_card_inn[batsman]['Against'] = bowling_team
             
-            if batting_team == winner:
-                batting_card_inn[batsman]['Win']  = True
+            bowling_card_inn[bowler ]['Team']    = bowling_team
+            bowling_card_inn[bowler ]['Against'] = batting_team
+            
+            if batting_team == winner: 
+                batting_card_inn[batsman]['Win'] = True
+            else:
+                bowling_card_inn[bowler ]['Win'] = True
                 
             if batting_team == toss_winner:
                 batting_card_inn[batsman]['Toss'] = True
-            
-        for b in batting_card_inn.keys():
-            batting_card_inn[b]['team-total']     = runs_total
+            else:
+                bowling_card_inn[bowler]['Toss'] = True
 
-            
-        #batting_card_inn['Total_inn'+str(i+1)]= {'0':' ', '1':' ', '2':' ', '3':' ', '4':' ', '5':' ', '6':' ',
-        #                         'Runs':' ', 'BF':' ', 'NO':' ', 'Team':' ', 'Against':' ',
-        #                         'Win':' ', 'Toss':' ', 'team-total':str(runs_total)+'-'+str(wkts), 'season':' '}
-            
+        for b in batting_card_inn.keys():
+            batting_card_inn[b]['team-total'] = runs_total
+
+        for b in bowling_card_inn.keys():
+            bowling_card_inn[b]['team-total'] = runs_total
+            bowling_card_inn[b]['O'] = convert_to_ov(bowling_card_inn[b]['O'])
+
         batting_card.update(batting_card_inn)
+        bowling_card.update(bowling_card_inn)
     
-    df = pd.DataFrame(batting_card).transpose()
+    df_bat = pd.DataFrame(batting_card).transpose()
     
-    df.reset_index(inplace=True)
-    df.rename(columns={"index": "batsman"}, inplace=True)
-    df['date']=match_date
-    df['match-id']=f.split('/')[-1].split('.')[0]
+    df_bat.reset_index(inplace=True)
+    df_bat.rename(columns={"index": "batsman"}, inplace=True)
+    df_bat['date']=match_date
+    df_bat['match-id']=f.split('/')[-1].split('.')[0]
+    
+    df_bowl = pd.DataFrame(bowling_card).transpose()
+    
+    df_bowl.reset_index(inplace=True)
+    df_bowl.rename(columns={"index": "bowler"}, inplace=True)
+    df_bowl['date']=match_date
+    df_bowl['match-id']=f.split('/')[-1].split('.')[0]
     
     read_match_info(fil)
 
-    return df
+    return (df_bat, df_bowl)
 
 def nice_scorecard(f, data_dir='./'):
-    df_ = print_scorecard(f, data_dir=data_dir)
-    df_nice = df_[['batsman', 'Runs', 'BF', '4', '6', 'team-total']]
-    return df_nice
-
+    df_bat, df_bowl = print_scorecard(f, data_dir=data_dir)
+    df_bat_nice  = df_bat[['batsman', 'Runs', 'BF', '4s', '6s', 'team-total']]
+    df_bowl_nice = df_bowl[['bowler', 'O', 'M', 'R', 'W', 'WD', 'NB']]
+    print (df_bat_nice)
+    print (df_bowl_nice)
 
 if __name__=="__main__":
-    f='../datasets/ipl/yaml/336002.yaml'
-    df=nice_scorecard(f)
+    fil='../datasets/ipl/yaml/336002.yaml'
+    nice_scorecard(fil)
     if 'full' in sys.argv:
-        df=print_scorecard(f)
-    print (df)
+        df_bat, df_bowl=print_scorecard(fil)
+        print (df_bat, df_bowl)
 
