@@ -1,18 +1,9 @@
-# Printing Scorecard from the raw ball-by-ball data
- 
-The code reads the file you provide and prints out the scorecard in a readable form. 
+# Analysing the [IPL](https://www.iplt20.com/) Cricket Data
 
-## Code usage
-
-Use the code as following.
-
-```
-python3  print_scorecard.py <filename>
-```
-
-And make sure the file exists in the given path. The match files can be downloaded from (https://cricsheet.org/downloads/).
-
-For the consistency check, one can use [cricinfo website](https://stats.espncricinfo.com/talk/engine/records/index.html?id=117;type=trophy).
+- Reading the scorecard from a yaml files
+- Top players (Batsman and Bowler) across various categories.
+- Consistency analysis of different players
+- Finding out the best batsman in IPL.
 
 ## Code Dependencies
 This code uses, `numpy`, `pandas`, and `yaml`. Which can be installed in your system using standard methods like `pip`.
