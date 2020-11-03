@@ -1,7 +1,7 @@
 # Analysing the [IPL](https://www.iplt20.com/) Cricket Data
 
-- Reading the scorecard from a yaml files
-- Top players (Batsman and Bowler) across various categories.
+- Reading the scorecard from a yaml files. The match files can be downloaded from [cricsheet website.](https://cricsheet.org/downloads/).
+- Finding top players (Batsman and Bowler) across various categories.
 - Consistency analysis of different players
 - Finding out the best batsman in IPL.
 
