@@ -3,7 +3,8 @@
 - Reading the scorecard from a yaml files. The match files can be downloaded from [cricsheet website.](https://cricsheet.org/downloads/).
 - Finding top players (Batsman and Bowler) across various categories.
 - Consistency analysis of different players
-- Finding out the best batsman in IPL.
+- Finding out the best batsman/bowler in IPL.
+
 
 ## Code Dependencies
 This code uses, `numpy`, `pandas`, and `yaml`. Which can be installed in your system using standard methods like `pip`.
