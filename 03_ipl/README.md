@@ -1,4 +1,4 @@
-# Analysing the [IPL](https://www.iplt20.com/) Cricket Data
+# Analysing the [IPL Cricket](https://www.iplt20.com/) Data
 
 - Reading the scorecard from a yaml files. The match files can be downloaded from [cricsheet website.](https://cricsheet.org/downloads/).
 - Finding top players (Batsman and Bowler) across various categories.
