@@ -4,7 +4,8 @@ import numpy as np
 import pandas as pd
 import datetime, pickle
 
-def get_match_list(year=None, fil='../datasets/ipl/README.txt'):
+def get_match_list(year=None, data_dir='../datasets/ipl/yaml/'):
+    fil = data_dir +'/README.txt'
     f_in = open(fil, 'r')
     lines= f_in.readlines()
     matches = []
