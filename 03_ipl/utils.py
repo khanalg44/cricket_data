@@ -50,7 +50,7 @@ def add_overs(overs):
 def get_player_profile(player, batsman=True):
     
     if batsman:
-        df=pickle.load(open('./database/batting_record.df', 'rb'))
+        df=pickle.load(open('./database/batting_record_all_years.df', 'rb'))
 
         data_player=[]
         for season in range(2008, 2020, 1): 
@@ -79,7 +79,7 @@ def get_player_profile(player, batsman=True):
         return df_p
 
     else:
-        df=pickle.load(open('./database/bowling_record.df', 'rb'))
+        df=pickle.load(open('./database/bowling_record_all_years.df', 'rb'))
 
         data_player=[]
         for season in range(2008, 2020, 1):
