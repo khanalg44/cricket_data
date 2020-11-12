@@ -5,7 +5,6 @@
 - Consistency analysis of different players
 - Finding out the best batsman/bowler in IPL.
 
-
 ## Code Dependencies
 This code uses, `numpy`, `pandas`, and `yaml`. Which can be installed in your system using standard methods like `pip`.
 
