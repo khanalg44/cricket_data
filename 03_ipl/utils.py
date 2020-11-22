@@ -29,9 +29,14 @@ def get_match_list(year=None, data_dir='../datasets/ipl/yaml/'):
     return df_matches
 
 def add_overs(overs):
+    # given a list of overs returns total over
+    # example: [1.2, ]
     ov_int = 0
     ov_frac = 0
+
+    dtype = str(type(overs[0]))
     for ov in overs:
+        ov = str(ov)
         ov_split = ov.split('.')
         ov_int  += int(ov_split[0])
 
@@ -43,9 +48,15 @@ def add_overs(overs):
             ov_frac = ov_frac %6
 
     if ov_frac==0:
-        return str(ov_int)
+        if 'str' not in dtype:
+            return ov_int
+        else:
+            return str(ov_int)
     else:
-        return str(ov_int)+'.'+str(ov_frac)
+        if 'str' not in dtype:
+            return ov_int+ov_frac*0.1
+        else:
+            return str(ov_int)+'.'+str(ov_frac)
 
 def Over2Balls(Over):
     ov_split = Over.split('.')
