@@ -1,6 +1,7 @@
 # Analysing Test Match
--TEST Match is the BEST Match.
+-TEST cricket is the BEST cricket.
 
 # TODO List
 
-- Fix the number of maiden overs when it's a broken over. For Example Pat commins actual figures 10.2-4-21-4 however my code counted the last over with only two balls as a maiden since no runs came out of it. Find a fix.
+- Fix the number of maiden overs when it's a broken over.
+    - For example in the match `1223869.yaml` (India 36 all out match): Pat commins actual figures were `10.2-4-21-4` however my code showed `10.2-5-21-4` as it counted the last over with only two balls as a maiden since no runs came out of it. Find a fix.
