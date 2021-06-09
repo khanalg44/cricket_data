@@ -40,14 +40,14 @@ def print_scorecard(f, data_dir=data_dir):
     def add_batsman(player, batting_scorecard, season=season, Team=' ', Against=' '):
         if player not in batting_scorecard:
             batting_scorecard[player] = {'0s':0, '1s':0, '2s':0, '3s':0, '4s':0, '5s':0, '6s':0, '7s':0,
-                                         'R':0, 'BF':0, 'NO':True, 'Team':Team, 'Against':Against, 'Tied':tied,
+                                         'Runs':0, 'BF':0, 'NO':True, 'Team':Team, 'Against':Against, 'Tied':tied,
                                          'Win':False, 'Toss':False, 'team-total':0, 'season':season}
 
     def add_bowler(player,   bowling_scorecard, season=season, Team=' ', Against=' '):
         if player not in bowling_scorecard:
-            bowling_scorecard[player] = {'O':0, 'M':0, 'R':0, 'W':0, 'ovs':{},
-                    '0s':0, '1s':0, '2s':0, '3s':0, '4s':0, '5s':0, '6s':0, '7s':0,
-                                         'WD':0, 'NB':0, 'Team':Team, 'Against':Against, 'Win':False, 'Tied':tied,
+            bowling_scorecard[player] = {'O':0, 'M':0, 'Runs':0, 'W':0, 'ovs':{},
+                                         '0s':0, '1s':0, '2s':0, '3s':0, '4s':0, '5s':0, '6s':0, '7s':0,
+                                         'WD':0, 'NB':0, 'Team':Team, 'Against':Against, 'Tied':tied, 'Win':False, 
                                          'Toss':False, 'team-total':0, 'season':season}
 
     batting_card = {}
@@ -90,11 +90,11 @@ def print_scorecard(f, data_dir=data_dir):
             bowling_card_inn[bowler ]['ovs'][ov_num]['R'] += runs_tot
 
             # counter for total batsman run
-            batting_card_inn[batsman]['R']           += runs_bat
-            batting_card_inn[batsman]['BF']          += 1
+            batting_card_inn[batsman]['Runs']       += runs_bat
+            batting_card_inn[batsman]['BF']         += 1
 
-            bowling_card_inn[bowler ]['R']           += runs_tot
-            bowling_card_inn[bowler ]['O']           += 1
+            bowling_card_inn[bowler ]['Runs']       += runs_tot
+            bowling_card_inn[bowler ]['O']          += 1
 
             if 'extras' in deliv[1]:
                 if 'wides' in deliv[1]['extras']:
@@ -107,12 +107,11 @@ def print_scorecard(f, data_dir=data_dir):
                     bowling_card_inn[bowler]['NB']  += 1 #
 
                 elif 'legbyes' in deliv[1]['extras']:
-                    #bowling_card_inn[bowler]['R']   -= 1 #
-                    bowling_card_inn[bowler]['R']   -= deliv[1]['extras']['legbyes']
+                    bowling_card_inn[bowler]['Runs']   -= deliv[1]['extras']['legbyes']
                     bowling_card_inn[bowler ]['ovs'][ov_num]['R'] -= deliv[1]['extras']['legbyes']
 
                 elif 'byes' in deliv[1]['extras']:
-                    bowling_card_inn[bowler]['R']   -= deliv[1]['extras']['byes']
+                    bowling_card_inn[bowler]['Runs']   -= deliv[1]['extras']['byes']
 
             runs_extra += runs_ext
             runs_total += runs_tot

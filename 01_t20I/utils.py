@@ -6,6 +6,7 @@ import datetime, pickle
 
 def get_match_list(year=None, data_dir='../datasets/t20i/'):
     fil = data_dir +'/README.txt'
+    print ("Full file path:", fil)
     f_in = open(fil, 'r')
     lines= f_in.readlines()
     matches = []
